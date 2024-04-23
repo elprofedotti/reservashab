@@ -2,5 +2,5 @@
 vendor
 .vscode
 node_modules
-config/database.php
-/config/database.php
+includes/config/database.php
+/includes/config/database.php

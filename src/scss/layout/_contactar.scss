@@ -1,11 +1,11 @@
 .imagen-contacto{
-    position: relative; /* Esto es necesario para posicionar el pseudo-elemento correctamente */
-    background-image: url(../img/contacto.png);
-    background-attachment: fixed; /* Esto crea el efecto parallax */
+    position: relative;
+    background-image: url(../img/encuentra.jpg);
 }
-// .webp .imagen-contacto{
-//     background-image: url(../img/interior.webp);
-// }
+.webp .imagen-contacto{
+    position: relative;
+    background-image: url(../img/encuentra.webp);
+}
 .imagen-contacto::before {
     content: ''; /* Necesario para generar el pseudo-elemento */
     position: absolute; /* Posiciona absolutamente respecto al div .inicio */

@@ -1,0 +1,40 @@
+.imagen-contacto{
+    position: relative; /* Esto es necesario para posicionar el pseudo-elemento correctamente */
+    background-image: url(../img/contacto.png);
+    background-attachment: fixed; /* Esto crea el efecto parallax */
+}
+// .webp .imagen-contacto{
+//     background-image: url(../img/interior.webp);
+// }
+.imagen-contacto::before {
+    content: ''; /* Necesario para generar el pseudo-elemento */
+    position: absolute; /* Posiciona absolutamente respecto al div .inicio */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7); /* Color negro con opacidad, ajusta el 0.5 según necesites */
+    z-index: -1; /* Coloca la capa detrás del contenido dentro de .inicio */
+}
+.imagen-contacto{
+    background-position: center center;
+    background-size: cover;
+    padding: $separacion*2 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    h2{
+        font-size: 4rem;
+        font-weight: $bold;
+        
+    }
+    p{
+        font-size: 1.8rem;
+        
+    }
+    h2, p{
+        color: $blanco;  
+    }
+    z-index: 1;
+}

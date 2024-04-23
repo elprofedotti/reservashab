@@ -1,0 +1,138 @@
+.formulario{
+    p{
+        font-size: 1.4rem;
+        color: $grisOscuro;
+        margin: 2rem 0 0 0;
+    }
+    legend{
+        font-size: 2rem;
+        color: $grisOscuro;
+    }
+    label{
+        font-weight: $bold;
+        text-transform: uppercase;
+        display: block;
+    }
+    input:not([type="submit"]), 
+    textarea,
+    select{
+        padding: 1rem;
+        display: block;
+        width: 100%;
+        //background-color:$blanco;
+        border: 1px solid $gris;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+    }
+    textarea{
+        height:20rem;
+    }
+    .forma-contacto{
+        max-width: 25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    input[type="radio"]{
+        margin: 0;
+        width: auto;
+    }
+}
+/* Estilos del Contenedor
+.contenedor {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+*/
+/* Estilos del Formulario de Búsqueda 
+.formulario-busqueda {
+    background: #f8f8f8;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.formulario-busqueda fieldset {
+    margin: 10px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.formulario-busqueda legend {
+    padding: 0 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+Estilos de las Etiquetas y Campos de Entrada
+.formulario-busqueda label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.formulario-busqueda input[type="text"],
+.formulario-busqueda input[type="date"],
+.formulario-busqueda input[type="email"],
+.formulario-busqueda input[type="tel"],
+.formulario-busqueda textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+ Estilos para los Botones 
+.formulario-busqueda input[type="submit"] {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.formulario-busqueda input[type="submit"]:hover {
+    background: #0056b3;
+}
+*/
+.formulario-busqueda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espacio entre los elementos */
+    align-items: center; /* Alinear verticalmente */
+    justify-content: start; /* Alinear horizontalmente */
+    padding: 10px;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-busqueda input[type="text"],
+.formulario-busqueda input[type="date"],
+.formulario-busqueda input[type="email"],
+.formulario-busqueda input[type="tel"] {
+    flex: 1; /* Cada campo ocupa un espacio igual */
+    min-width: 120px; /* Ancho mínimo para cada campo */
+}
+
+.formulario-busqueda input[type="submit"] {
+    padding: 8px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.formulario-busqueda input[type="submit"]:hover {
+    background: #0056b3;
+}

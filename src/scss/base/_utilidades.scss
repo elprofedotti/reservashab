@@ -1,0 +1,42 @@
+.seccion {
+    margin-top: calc($separacion / 2);
+    margin-bottom: calc($separacion / 2);
+}
+.contenido-centrado {
+    max-width: 80rem;
+}
+.alinear-derecha{
+    display: flex;
+    justify-content: flex-end;
+}
+.alinear-centro{
+    display: flex;
+    justify-content: center;
+}
+.w-100{
+    width: 100%;
+}
+.paginacion a {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #333;
+}
+
+.paginacion a.pagina-actual {
+    font-weight: bold;
+    color: #000;
+}
+
+#message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: lightgreen;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+

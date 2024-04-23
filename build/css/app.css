@@ -390,14 +390,27 @@ h4 {
   width: 100%;
 }
 
+.paginacion a {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  color: #333;
+}
+
+.paginacion a.pagina-actual {
+  font-weight: bold;
+  color: #000;
+}
+
 #message {
-  position: relative;
-  top: 150px;
+  position: fixed;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: lightgreen;
-  padding: 30px;
-  border-radius: 9px;
+  padding: 20px;
+  border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -500,6 +513,7 @@ h4 {
 
 .dark-mode {
   background-color: #1a1a1a;
+  /* Estilo para dispositivos móviles */
 }
 .dark-mode p {
   color: #FFFFFF;
@@ -508,16 +522,16 @@ h4 {
   color: #e1e1e1;
 }
 .dark-mode .anuncio,
-.dark-mode .resumen-habitacion {
+.dark-mode .resumen-propiedad {
   background-color: #333333;
   border: 1px solid #333333;
 }
 .dark-mode .anuncio .precio,
-.dark-mode .resumen-habitacion .precio {
+.dark-mode .resumen-propiedad .precio {
   color: #71B100;
 }
 .dark-mode .anuncio .icono,
-.dark-mode .resumen-habitacion .icono {
+.dark-mode .resumen-propiedad .icono {
   filter: invert(100%);
 }
 .dark-mode .texto-nosotros blockquote {
@@ -535,24 +549,94 @@ h4 {
   color: #FFFFFF;
   border: 1px solid #333333;
 }
+.dark-mode .paginacion a.pagina-actual {
+  font-weight: bold;
+  color: rgb(234, 94, 13);
+}
+.dark-mode table.habitaciones {
+  margin-top: 4rem;
+  width: 100%;
+  border-spacing: 0;
+}
+.dark-mode table.habitaciones thead {
+  background-color: #E08709;
+}
+.dark-mode table.habitaciones thead th {
+  color: #000000;
+  padding: 2rem;
+}
+.dark-mode table.habitaciones td {
+  color: #E08709;
+  max-width: 30rem;
+  padding-left: 2rem;
+}
+.dark-mode table.reservas {
+  margin-top: 4rem;
+  width: 100%;
+  border-spacing: 0;
+}
+.dark-mode table.reservas thead {
+  background-color: #E08709;
+}
+.dark-mode table.reservas thead th {
+  color: #000000;
+  padding: 2rem;
+}
+.dark-mode table.reservas td {
+  color: #E08709;
+  max-width: 30rem;
+  padding-left: 2rem;
+}
 @media (max-width: 768px) {
+  .dark-mode .tabla-responsive {
+    margin: 0 auto; /* Centra la tabla horizontalmente */
+    width: 90%; /* Ancho máximo de la tabla */
+  }
+  .dark-mode .tabla-responsive th {
+    display: none;
+  }
   .dark-mode .tabla-responsive tr {
-    border: 1px solid #757171;
-    box-shadow: 0 2px 4px rgba(162, 119, 1, 0.86);
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(228, 222, 222, 0.959);
+  }
+  .dark-mode .tabla-responsive td {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .dark-mode .tabla-responsive td::before {
+    content: attr(data-label) ": ";
+    font-weight: bold;
   }
 }
 
-.no-webp .inicio {
+.inicio {
+  position: relative; /* Esto es necesario para posicionar el pseudo-elemento correctamente */
   background-image: url(../img/header.jpg);
 }
 
 .webp .inicio {
+  position: relative; /* Esto es necesario para posicionar el pseudo-elemento correctamente */
   background-image: url(../img/header.webp);
+}
+
+.inicio::before {
+  content: ""; /* Necesario para generar el pseudo-elemento */
+  position: absolute; /* Posiciona absolutamente respecto al div .inicio */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad, ajusta el 0.5 según necesites */
+  z-index: -1; /* Coloca la capa detrás del contenido dentro de .inicio */
 }
 
 .header {
   background-color: #333333;
   padding: 1rem 0 3rem 0;
+  z-index: 1;
 }
 .header.inicio {
   background-position: center center;
@@ -579,11 +663,7 @@ h4 {
   color: #FFFFFF;
   font-weight: 700;
   line-height: 2;
-  max-width: 45rem;
-}
-.contenido-header h2 {
-  text-align: left;
-  color: #FFFFFF;
+  max-width: 60rem;
 }
 
 .footer {
@@ -762,12 +842,56 @@ h4 {
   font-weight: 900;
 }
 
-.no-webp .imagen-contacto {
-  background-image: url(../img/encuentra.jpg);
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-.webp .imagen-contacto {
-  background-image: url(../img/encuentra.webp);
+.modal-contenido {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.cerrar {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.imagen-contacto {
+  position: relative; /* Esto es necesario para posicionar el pseudo-elemento correctamente */
+  background-image: url(../img/contacto.png);
+  background-attachment: fixed; /* Esto crea el efecto parallax */
+}
+
+.imagen-contacto::before {
+  content: ""; /* Necesario para generar el pseudo-elemento */
+  position: absolute; /* Posiciona absolutamente respecto al div .inicio */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7); /* Color negro con opacidad, ajusta el 0.5 según necesites */
+  z-index: -1; /* Coloca la capa detrás del contenido dentro de .inicio */
 }
 
 .imagen-contacto {
@@ -777,6 +901,7 @@ h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 1;
 }
 .imagen-contacto h2 {
   font-size: 4rem;
@@ -903,6 +1028,105 @@ h4 {
   width: auto;
 }
 
+/* Estilos del Contenedor
+.contenedor {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+*/
+/* Estilos del Formulario de Búsqueda 
+.formulario-busqueda {
+    background: #f8f8f8;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.formulario-busqueda fieldset {
+    margin: 10px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.formulario-busqueda legend {
+    padding: 0 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+Estilos de las Etiquetas y Campos de Entrada
+.formulario-busqueda label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.formulario-busqueda input[type="text"],
+.formulario-busqueda input[type="date"],
+.formulario-busqueda input[type="email"],
+.formulario-busqueda input[type="tel"],
+.formulario-busqueda textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+ Estilos para los Botones 
+.formulario-busqueda input[type="submit"] {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.formulario-busqueda input[type="submit"]:hover {
+    background: #0056b3;
+}
+*/
+.formulario-busqueda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espacio entre los elementos */
+  align-items: center; /* Alinear verticalmente */
+  justify-content: start; /* Alinear horizontalmente */
+  padding: 10px;
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-busqueda input[type=text],
+.formulario-busqueda input[type=date],
+.formulario-busqueda input[type=email],
+.formulario-busqueda input[type=tel] {
+  flex: 1; /* Cada campo ocupa un espacio igual */
+  min-width: 120px; /* Ancho mínimo para cada campo */
+}
+
+.formulario-busqueda input[type=submit] {
+  padding: 8px 15px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.formulario-busqueda input[type=submit]:hover {
+  background: #0056b3;
+}
+
 @media (min-width: 1000px) {
   .contenido-nosotros {
     display: grid;
@@ -921,7 +1145,7 @@ h4 {
 .alerta {
   padding: 0.5rem;
   text-align: center;
-  color: #FFFFFF;
+  color: #E08709;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -936,71 +1160,69 @@ h4 {
   background-color: #E08709;
 }
 
-table, .habitaciones {
+table.habitaciones {
   margin-top: 4rem;
   width: 100%;
   border-spacing: 0;
 }
-table thead, .habitaciones thead {
-  background-color: #71B100;
+table.habitaciones thead {
+  background-color: #E08709;
 }
-table thead th, .habitaciones thead th {
-  color: #FFFFFF;
+table.habitaciones thead th {
+  color: #000000;
   padding: 2rem;
 }
-table td, .habitaciones td {
-  color: #E08709;
+table.habitaciones td {
+  color: #000000;
   max-width: 30rem;
-}
-table .imagen-tabla, .habitaciones .imagen-tabla {
-  width: 10rem;
+  padding-left: 2rem;
 }
 
-table, .reservas {
+table.reservas {
   margin-top: 4rem;
   width: 100%;
   border-spacing: 0;
 }
-table thead, .reservas thead {
-  background-color: #71B100;
+table.reservas thead {
+  background-color: #E08709;
 }
-table thead th, .reservas thead th {
-  color: #FFFFFF;
+table.reservas thead th {
+  color: #000000;
   padding: 2rem;
 }
-table td, .reservas td {
-  color: #E08709;
+table.reservas td {
+  color: #000000;
   max-width: 30rem;
-}
-table .imagen-tabla, .reservas .imagen-tabla {
-  width: 10rem;
+  padding-left: 2rem;
 }
 
 /* Estilo para dispositivos móviles */
 @media (max-width: 768px) {
   .tabla-responsive {
-    margin: 0 auto; /* Centra la tabla horizontalmente */
-    width: 90%; /* Ancho máximo de la tabla */
+    margin: 0 auto;
+    width: 90%;
   }
   .tabla-responsive th {
     display: none;
   }
   .tabla-responsive tr {
-    border: 1px solid #a6a7a1;
-    border-radius: 15px;
-    box-shadow: 0 2px 4px rgba(4, 4, 4, 0.1);
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   .tabla-responsive td {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
   }
   .tabla-responsive td::before {
     content: attr(data-label) ": ";
     font-weight: bold;
   }
 }
-.imagen-small {
-  width: 20rem;
+.exportar {
+  margin-top: 5px;
 }
 
 .anuncio p {
@@ -1012,41 +1234,8 @@ table .imagen-tabla, .reservas .imagen-tabla {
 }
 .anuncio h3 {
   display: inline-block;
+  width: 180px; /* Ajusta este valor para controlar el ancho del contenedor */
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-}
-
-.modal-contenido {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-.cerrar {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.cerrar:hover,
-.cerrar:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
 }

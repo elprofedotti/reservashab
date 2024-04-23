@@ -1,0 +1,57 @@
+//.no-webp .inicio{
+  //  background-image: url(../img/header.png);
+    
+//}
+
+.inicio{
+    position: relative; /* Esto es necesario para posicionar el pseudo-elemento correctamente */
+    background-image: url(../img/header.jpg);
+}
+.webp .inicio{
+    position: relative; /* Esto es necesario para posicionar el pseudo-elemento correctamente */
+    background-image: url(../img/header.webp);
+    
+}
+
+.inicio::before {
+    content: ''; /* Necesario para generar el pseudo-elemento */
+    position: absolute; /* Posiciona absolutamente respecto al div .inicio */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad, ajusta el 0.5 según necesites */
+    z-index: -1; /* Coloca la capa detrás del contenido dentro de .inicio */
+}
+
+.header{
+    background-color: $grisOscuro;
+    padding: 1rem 0 3rem 0;
+    z-index: 1;
+    &.inicio{
+        background-position: center center;
+        background-size: cover;
+        @include tablet{
+            min-height: 70rem;
+        }
+        .contenido-header{
+            @include tablet{
+                min-height: 60rem;
+            }
+        }
+    }
+}
+
+.contenido-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    h1{
+        text-align: left;
+        color: $blanco;
+        font-weight: $bold;
+        line-height: 2;
+        max-width: 60rem;
+    }
+}

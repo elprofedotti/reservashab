@@ -1,0 +1,18 @@
+
+.anuncio{
+    p{
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* Ajusta este número al número de líneas que deseas mostrar */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    h3{
+        display: inline-block;
+        width: 180px; /* Ajusta este valor para controlar el ancho del contenedor */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+}

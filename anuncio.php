@@ -32,7 +32,7 @@ use App\Habitacion;
                             
                         <?php else: ?>
                             <!-- Usuario no logueado, invitar a iniciar sesión -->
-                            <p class="alerta">Para reservar, debes <a href="loginUsuario.php">iniciar sesión</a>.</p>
+                            <p class="alerta" >Para reservar, debes <a href="loginUsuario.php">iniciar sesión</a>.</p>
                         <?php endif; ?>
                     
                     

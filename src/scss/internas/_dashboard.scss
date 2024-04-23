@@ -1,0 +1,96 @@
+.alerta{
+    padding: .5rem;
+    text-align: center;
+    color: $amarillo;
+    font-weight: $bold;
+    text-transform: uppercase;
+    
+    &.error{
+        background-color: $rojo;
+        margin: 1rem;
+    }
+    &.exito{
+        background-color: $verde;
+        
+    }
+    &.guarda{
+        background-color: $amarillo;
+    }
+}
+table.habitaciones {
+    margin-top: 4rem;
+    width:100%;
+    border-spacing: 0;
+    
+    thead{
+        background-color: $amarillo;
+
+        th{
+            color: $negro;
+            padding: 2rem;
+               
+        }
+        
+    }
+    td{
+        color: $negro;
+        max-width: 30rem;
+        padding-left: 2rem;
+    }
+    
+    
+}
+table.reservas {
+    margin-top: 4rem;
+    width:100%;
+    border-spacing: 0;
+    
+    thead{
+        background-color: $amarillo;
+
+        th{
+            color: $negro;
+            padding: 2rem;
+               
+        }
+        
+    }
+    td{
+        color: $negro;
+        max-width: 30rem;
+        padding-left: 2rem;
+    }
+    
+    
+}
+
+/* Estilo para dispositivos móviles */
+@media (max-width: 768px) {
+    .tabla-responsive {
+        margin: 0 auto; 
+        width: 90%; 
+    }
+    .tabla-responsive th {
+      display: none;
+    }
+    .tabla-responsive tr {
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .tabla-responsive td {
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+    .tabla-responsive td::before {
+      content: attr(data-label) ": ";
+      font-weight: bold;
+    }
+  }
+  
+.exportar {
+    margin-top: 5px;
+}

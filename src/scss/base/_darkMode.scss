@@ -1,0 +1,120 @@
+.dark-mode{
+    background-color: darken($grisOscuro, 10);
+
+    p {
+        color: $blanco;
+    }
+    a, h1, h2, h3, h4{
+        color: $gris;
+    }
+    .anuncio,
+    .resumen-propiedad{
+        background-color: $grisOscuro;
+        border: 1px solid $grisOscuro;
+
+        .precio{
+            color: $verde;
+        }
+        .icono{
+            filter: invert(100%)
+        }
+    }
+
+    .texto-nosotros blockquote{
+        color: $blanco;
+    }
+
+    .formulario{
+        label,
+        legend,
+        p{
+            color: $gris;
+        }
+        
+        input:not([type=submit]),
+        textarea,
+        select{
+            background-color: $grisOscuro;
+            color: $blanco;
+            border: 1px solid $grisOscuro;
+        }
+
+
+    }
+    .paginacion a.pagina-actual {
+        font-weight: bold;
+        color: rgb(234, 94, 13)
+    }
+    table.habitaciones {
+        margin-top: 4rem;
+        width:100%;
+        border-spacing: 0;
+        
+        thead{
+            background-color: $amarillo;
+    
+            th{
+                color: $negro;
+                padding: 2rem;
+                   
+            }
+            
+        }
+        td{
+            color: $amarillo;
+            max-width: 30rem;
+            padding-left: 2rem;
+        }
+        
+        
+    }
+    table.reservas {
+        margin-top: 4rem;
+        width:100%;
+        border-spacing: 0;
+        
+        thead{
+            background-color: $amarillo;
+    
+            th{
+                color: $negro;
+                padding: 2rem;
+                   
+            }
+            
+        }
+        td{
+            color: $amarillo;
+            max-width: 30rem;
+            padding-left: 2rem;
+        }
+        
+        
+    }
+    /* Estilo para dispositivos móviles */
+    @media (max-width: 768px) {
+        .tabla-responsive {
+            margin: 0 auto; /* Centra la tabla horizontalmente */
+            width: 90%; /* Ancho máximo de la tabla */
+        }
+        .tabla-responsive th {
+          display: none;
+        }
+        .tabla-responsive tr {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(228, 222, 222, 0.959)
+        }
+        .tabla-responsive td {
+          display: block;
+          margin-bottom: 10px;
+        }
+      
+        .tabla-responsive td::before {
+          content: attr(data-label) ": ";
+          font-weight: bold;
+        }
+      }
+}

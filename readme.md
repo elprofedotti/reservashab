@@ -62,13 +62,16 @@ CREATE TABLE `users` (
 ```
 
 
-Descripción del Proyecto de Sistema de Reservas de Habitaciones
-Objetivo General
+## Descripción del Proyecto de Sistema de Reservas de Habitaciones
+## Objetivo General
 El objetivo de este proyecto es desarrollar un sistema web que permita a los usuarios ver y reservar habitaciones en línea, con funcionalidades adicionales de gestión para administradores. El sistema proporciona una interfaz clara y amigable para que los usuarios puedan verificar la disponibilidad de habitaciones y hacer reservas, sujeto a autenticación.
 
-Funcionalidades Clave
-Para Usuarios:
-Visualización de Habitaciones: Los usuarios pueden navegar por una lista de habitaciones disponibles, donde cada entrada muestra información detallada como el tipo de habitación, precio, y disponibilidad actual.
+## Funcionalidades Clave
+
+## Para Usuarios:
+
+# Visualización de Habitaciones: Los usuarios pueden navegar por una lista de habitaciones disponibles, donde cada entrada muestra información detallada como el tipo de habitación, precio, y disponibilidad actual.
+
 Reservas: Para realizar una reserva, los usuarios deben estar autenticados (logueados). Esto asegura una gestión segura de las reservas y proporciona una capa adicional de seguridad al sistema.
 Gestión de Usuario: Los usuarios pueden crear cuentas, iniciar sesión, y gestionar sus reservas.
 Para Administradores:

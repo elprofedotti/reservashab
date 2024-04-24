@@ -59,7 +59,8 @@ CREATE TABLE `users` (
   `tipo` smallint(6) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-```bash
+```
+
 
 Descripción del Proyecto de Sistema de Reservas de Habitaciones
 Objetivo General

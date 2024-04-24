@@ -70,23 +70,31 @@ El objetivo de este proyecto es desarrollar un sistema web que permita a los usu
 
 ## Para Usuarios:
 
-### Visualización de Habitaciones: Los usuarios pueden navegar por una lista de habitaciones disponibles, donde cada entrada muestra información detallada como el tipo de habitación, precio, y disponibilidad actual.
+### Visualización de Habitaciones: 
+Los usuarios pueden navegar por una lista de habitaciones disponibles, donde cada entrada muestra información detallada como el tipo de habitación, precio, y disponibilidad actual.
 
-### Reservas: Para realizar una reserva, los usuarios deben estar autenticados (logueados). Esto asegura una gestión segura de las reservas y proporciona una capa adicional de seguridad al sistema.
+### Reservas: 
+Para realizar una reserva, los usuarios deben estar autenticados (logueados). Esto asegura una gestión segura de las reservas y proporciona una capa adicional de seguridad al sistema.
 
-### Gestión de Usuario: Los usuarios pueden crear cuentas, iniciar sesión, y gestionar sus reservas.
+### Gestión de Usuario: 
+Los usuarios pueden crear cuentas, iniciar sesión, y gestionar sus reservas.
 
 ## Para Administradores:
 
-### Dashboard Administrativo: Al iniciar sesión, los usuarios con roles de administrador son redirigidos a un dashboard donde pueden ver un resumen de todas las reservas y las habitaciones.
+### Dashboard Administrativo: 
+Al iniciar sesión, los usuarios con roles de administrador son redirigidos a un dashboard donde pueden ver un resumen de todas las reservas y las habitaciones.
 
-### Gestión de Habitaciones y Reservas: Los administradores pueden añadir, editar o eliminar habitaciones, así como modificar el estado de las reservas (por ejemplo, de 'pendiente' a 'confirmada' o 'cancelada').
+### Gestión de Habitaciones y Reservas: 
+Los administradores pueden añadir, editar o eliminar habitaciones, así como modificar el estado de las reservas (por ejemplo, de 'pendiente' a 'confirmada' o 'cancelada').
 
 ## Tecnologías Utilizadas
 
-### Frontend: HTML, CSS, y JavaScript para una interfaz de usuario interactiva.
-### Backend: PHP para el manejo de la lógica del servidor y MySQL para la gestión de la base de datos.
-### Herramientas: Composer para la gestión de dependencias de PHP y Node.js junto con npm para manejar librerías y scripts del lado del cliente.
+### Frontend: 
+HTML, CSS, y JavaScript para una interfaz de usuario interactiva.
+### Backend: 
+PHP para el manejo de la lógica del servidor y MySQL para la gestión de la base de datos.
+### Herramientas: 
+Composer para la gestión de dependencias de PHP y Node.js junto con npm para manejar librerías y scripts del lado del cliente.
 
 ## Estado Actual del Proyecto
 Actualmente, el proyecto permite la visualización de habitaciones y la autenticación de usuarios. Las funcionalidades de reserva están operativas bajo autenticación. El panel de administración está en desarrollo y pronto permitirá a los administradores gestionar habitaciones y reservas directamente desde el dashboard.

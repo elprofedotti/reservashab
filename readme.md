@@ -28,8 +28,10 @@ Este comando compilará los assets necesarios para el proyecto utilizando herram
 🗄️ Configuración de la Base de Datos
 Necesitarás importar las estructuras de las tablas a tu sistema de gestión de bases de datos. Encuentra los scripts SQL en el directorio sql/ del proyecto. Importa estos archivos a tu base de datos para configurar las tablas necesarias.
 
+
 Puedes usar la siguiente estructura:
 
+```bash
 CREATE TABLE `habitaciones` (
   `id` int(11) NOT NULL,
   `titulo` varchar(255) NOT NULL,
@@ -56,3 +58,5 @@ CREATE TABLE `users` (
   `contraseña` varchar(255) NOT NULL,
   `tipo` smallint(6) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+```

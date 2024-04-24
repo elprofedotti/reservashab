@@ -17,6 +17,7 @@ Una vez clonado el repositorio, navega al directorio del proyecto y ejecuta los 
 ```bash
 composer install  # Instala las dependencias de PHP
 npm install       # Instala las dependencias de Node.js
+```
 
 🚀 Ejecución del Proyecto
 Para compilar y preparar los archivos estáticos del proyecto, ejecuta:

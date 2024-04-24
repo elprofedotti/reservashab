@@ -4,3 +4,4 @@ vendor
 node_modules
 database.php
 
+includes/config/database.php

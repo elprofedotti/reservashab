@@ -26,8 +26,19 @@ npm run dev
 Este comando compilará los assets necesarios para el proyecto utilizando herramientas como Webpack o Gulp, según esté configurado.
 
 🗄️ Configuración de la Base de Datos
-Necesitarás importar las estructuras de las tablas a tu sistema de gestión de bases de datos. Encuentra los scripts SQL en el directorio sql/ del proyecto. Importa estos archivos a tu base de datos para configurar las tablas necesarias.
+------------------------------------
 
+Antes de importar las estructuras de las tablas a tu sistema de gestión de bases de datos, deberás crear la base de datos. A continuación se proporciona el script SQL para la creación de la base de datos:
+
+```sql
+-- Crear la base de datos
+CREATE DATABASE IF NOT EXISTS nombre_de_tu_base_de_datos CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- Seleccionar la base de datos
+USE nombre_de_tu_base_de_datos;
+```
+
+Necesitarás importar las estructuras de las tablas a tu sistema de gestión de bases de datos.
 
 Puedes usar la siguiente estructura:
 
